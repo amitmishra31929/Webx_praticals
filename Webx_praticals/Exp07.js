@@ -28,7 +28,7 @@ app.get('/set-cookie', (req, res) => {
         httpOnly: true
     });
 
-    console.log('✅ Cookie SET: examStatus = In Progress');
+    console.log('Cookie SET: examStatus = In Progress');
 
     res.send('Cookie has been set! Check your terminal.');
 });
@@ -40,10 +40,10 @@ app.get('/get-cookie', (req, res) => {
     const myCookie = req.cookies.examStatus;
 
     if (myCookie) {
-        console.log(`📥 Cookie RECEIVED: ${myCookie}`);
+        console.log(`Cookie RECEIVED: ${myCookie}`);
         res.send(`Cookie value: ${myCookie}`);
     } else {
-        console.log('⚠️ No cookie found');
+        console.log('No cookie found');
         res.send('No cookie found or it expired.');
     }
 });
@@ -54,14 +54,14 @@ app.get('/get-cookie', (req, res) => {
 app.get('/clear-cookie', (req, res) => {
     res.clearCookie('examStatus');
 
-    console.log('🗑️ Cookie CLEARED');
+    console.log('Cookie CLEARED');
 
     res.send('Cookie has been cleared!');
 });
 
 // Start server
 app.listen(3000, () => {
-    console.log('🚀 Server running at http://localhost:3000');
+    console.log('Server running at http://localhost:3000');
 });
 //nmp install express cookie-parser
 // To run: node app.js
